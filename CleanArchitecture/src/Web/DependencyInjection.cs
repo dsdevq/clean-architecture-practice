@@ -4,8 +4,7 @@ using CleanArchitecture.Infrastructure.Data;
 using CleanArchitecture.Web.Services;
 using Microsoft.AspNetCore.Mvc;
 
-
-namespace Microsoft.Extensions.DependencyInjection;
+namespace CleanArchitecture.Web;
 
 public static class DependencyInjection
 {
@@ -29,7 +28,7 @@ public static class DependencyInjection
 
         builder.Services.AddEndpointsApiExplorer();
 
-        builder.Services.AddOpenApiDocument((configure, sp) =>
+        builder.Services.AddOpenApiDocument((configure, _) =>
         {
             configure.Title = "CleanArchitecture API";
 

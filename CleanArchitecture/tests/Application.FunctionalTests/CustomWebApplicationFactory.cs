@@ -24,7 +24,7 @@ public class CustomWebApplicationFactory(DbConnection connection, string connect
         {
             services
                 .RemoveAll<IUser>()
-                .AddTransient(provider => Mock.Of<IUser>(s => s.Id == GetUserId()));
+                .AddTransient(_ => Mock.Of<IUser>(s => s.Id == GetUserId()));
             services
                 .RemoveAll<DbContextOptions<ApplicationDbContext>>()
                 .AddDbContext<ApplicationDbContext>((sp, options) =>

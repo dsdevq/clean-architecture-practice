@@ -14,7 +14,7 @@ public static class WebApplicationExtensions
             .WithTags(groupName);
     }
 
-    public static WebApplication MapEndpoints(this WebApplication app)
+    public static void MapEndpoints(this WebApplication app)
     {
         var endpointGroupType = typeof(EndpointGroupBase);
 
@@ -30,7 +30,5 @@ public static class WebApplicationExtensions
                 instance.Map(app);
             }
         }
-
-        return app;
     }
 }

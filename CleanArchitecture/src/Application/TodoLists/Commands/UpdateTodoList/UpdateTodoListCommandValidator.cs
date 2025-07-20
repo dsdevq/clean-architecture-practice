@@ -18,7 +18,7 @@ public class UpdateTodoListCommandValidator : AbstractValidator<UpdateTodoListCo
                 .WithErrorCode("Unique");
     }
 
-    public async Task<bool> BeUniqueTitle(UpdateTodoListCommand model, string title, CancellationToken cancellationToken)
+    private async Task<bool> BeUniqueTitle(UpdateTodoListCommand model, string title, CancellationToken cancellationToken)
     {
         return !await _context.TodoLists
             .Where(l => l.Id != model.Id)

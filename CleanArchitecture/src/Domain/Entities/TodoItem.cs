@@ -10,7 +10,7 @@ public class TodoItem : BaseAuditableEntity
 
     public PriorityLevel Priority { get; set; }
 
-    public DateTime? Reminder { get; set; }
+    public DateTime? Reminder { get; init; }
 
     private bool _done;
     public bool Done
@@ -27,5 +27,5 @@ public class TodoItem : BaseAuditableEntity
         }
     }
 
-    public TodoList List { get; set; } = null!;
+    public TodoList List { get; init; } = null!;
 }

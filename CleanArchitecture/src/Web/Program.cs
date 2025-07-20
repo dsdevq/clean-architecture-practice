@@ -1,3 +1,6 @@
+using CleanArchitecture.Web;
+using CleanArchitecture.Application;
+using CleanArchitecture.Infrastructure;
 using CleanArchitecture.Infrastructure.Data;
 
 var builder = WebApplication.CreateBuilder(args);
@@ -35,11 +38,11 @@ app.MapRazorPages();
 
 app.MapFallbackToFile("index.html");
 
-app.UseExceptionHandler(options => { });
+app.UseExceptionHandler(_ => { });
 
 
 app.MapEndpoints();
 
 app.Run();
 
-public partial class Program { }
+public partial class Program;
